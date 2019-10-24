@@ -23,7 +23,7 @@ while True:
         if sockobj == s:
             print("new connection\n")
             new_host = s.accept()
-            active_socks.append(new_host)
+            active_socks.append(new_host[0])
         else:
             data = sockobj.recv(1024)
             if not data:

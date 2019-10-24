@@ -18,7 +18,7 @@ while True:
     res = select.select(readsocks, [], [])
     print(type(res))
     print(type(res[0]))
-    readables, writeables = select.select(readsocks, [], [])
+    readables, writeables = res[0:2]
     for sockobj in readables:
         if sockobj == s:
             print("new connection\n")

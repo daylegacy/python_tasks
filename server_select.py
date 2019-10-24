@@ -9,7 +9,8 @@ s.bind(('0.0.0.0', 2222))
 s.listen(10)
 
 readsocks, writesocks = [], []
-active_socks =[]
+active_socks = []
+active_socks.append(s)
 
 while True:
     readsocks = active_socks.copy()

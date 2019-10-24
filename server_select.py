@@ -14,7 +14,8 @@ active_socks.append(s)
 
 while True:
     readsocks = active_socks.copy()
-    readables, writeables = select.select(readsocks, writesocks, [])
+    printf("1\n")
+    readables, writeables = select.select(readsocks, [], [])
     for sockobj in readables:
         if sockobj == s:
             print("new connection\n")
@@ -29,7 +30,3 @@ while True:
                 sockobj.send(data)
                 sockobj.close()
                 active_socks.remove(sockobj)
-
-
-
-        

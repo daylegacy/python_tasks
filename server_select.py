@@ -14,7 +14,7 @@ active_socks.append(s)
 
 while True:
     readsocks = active_socks.copy()
-    printf("1\n")
+    print("1\n")
     readables, writeables = select.select(readsocks, [], [])
     for sockobj in readables:
         if sockobj == s:

@@ -16,6 +16,7 @@ while True:
     readables, writeables = select.select(readsocks, writesocks, [])
     for sockobj in readables:
         if sockobj == s:
+            print("new connection\n")
             new_host, new_port = s.accept()
             active_socks.append((new_host, new_port))
         else:

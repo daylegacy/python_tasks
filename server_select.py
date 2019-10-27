@@ -14,14 +14,12 @@ active_socks.append(s)
 
 while True:
     readsocks = active_socks.copy()
-    print("1\n")
     res = select.select(readsocks, [], [])
     print(type(res))
     print(type(res[0]))
     readables, writeables = res[0:2]
     for sockobj in readables:
         if sockobj == s:
-            print("new connection\n")
             new_host = s.accept()
             active_socks.append(new_host[0])
         else:
